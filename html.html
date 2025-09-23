@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn HTML - CodeLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light">
+    <header>
+        <nav>
+            <div class="nav-brand">
+                <h2>CodeLearn</h2>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="html.html" class="active">HTML</a>
+                <a href="css.html">CSS</a>
+                <a href="javascript.html">JavaScript</a>
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <section class="tutorial-hero">
+                <h1>🏗️ HTML - HyperText Markup Language</h1>
+                <p class="tutorial-subtitle">Learn the building blocks of the web</p>
+            </section>
+
+            <section class="tutorial-content">
+                <h2>What is HTML?</h2>
+                <div class="content-block">
+                    <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure and content of a webpage using elements called <strong>tags</strong>.</p>
+                    
+                    <div class="callout">
+                        <h4>💡 Think of HTML like...</h4>
+                        <p>The skeleton of a house - it provides the basic structure that everything else builds upon!</p>
+                    </div>
+                </div>
+
+                <h2>HTML Tags and Structure</h2>
+                <div class="content-block">
+                    <p>HTML uses tags to define different parts of your content. Tags are written between angle brackets like <code>&lt;tagname&gt;</code>.</p>
+                    
+                    <h3>Basic HTML Structure</h3>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;My First Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;This is my first paragraph!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                    <div class="explanation">
+                        <ul>
+                            <li><strong>&lt;!DOCTYPE html&gt;</strong> - Tells the browser this is an HTML5 document</li>
+                            <li><strong>&lt;html&gt;</strong> - The root element that contains all content</li>
+                            <li><strong>&lt;head&gt;</strong> - Contains metadata (information about the page)</li>
+                            <li><strong>&lt;title&gt;</strong> - Sets the page title shown in the browser tab</li>
+                            <li><strong>&lt;body&gt;</strong> - Contains all visible content</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Common HTML Tags</h2>
+                <div class="content-block">
+                    <div class="tag-grid">
+                        <div class="tag-example">
+                            <h4>Headings</h4>
+                            <pre><code>&lt;h1&gt;Main Title&lt;/h1&gt;
+&lt;h2&gt;Subtitle&lt;/h2&gt;
+&lt;h3&gt;Section Title&lt;/h3&gt;</code></pre>
+                        </div>
+                        
+                        <div class="tag-example">
+                            <h4>Paragraphs</h4>
+                            <pre><code>&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</code></pre>
+                        </div>
+                        
+                        <div class="tag-example">
+                            <h4>Links</h4>
+                            <pre><code>&lt;a href="https://example.com"&gt;Click here&lt;/a&gt;</code></pre>
+                        </div>
+                        
+                        <div class="tag-example">
+                            <h4>Images</h4>
+                            <pre><code>&lt;img src="image.jpg" alt="Description"&gt;</code></pre>
+                        </div>
+                        
+                        <div class="tag-example">
+                            <h4>Lists</h4>
+                            <pre><code>&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        </div>
+                        
+                        <div class="tag-example">
+                            <h4>Divisions</h4>
+                            <pre><code>&lt;div class="container"&gt;
+  Content goes here
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>HTML Attributes</h2>
+                <div class="content-block">
+                    <p>Attributes provide additional information about HTML elements. They are written inside the opening tag.</p>
+                    
+                    <pre><code>&lt;a href="https://google.com" target="_blank" class="external-link"&gt;
+    Visit Google
+&lt;/a&gt;</code></pre>
+                    
+                    <div class="explanation">
+                        <ul>
+                            <li><strong>href</strong> - Specifies the URL to link to</li>
+                            <li><strong>target="_blank"</strong> - Opens link in a new tab</li>
+                            <li><strong>class</strong> - Assigns a CSS class for styling</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Try It Yourself!</h2>
+                <div class="content-block">
+                    <div class="interactive-demo">
+                        <div class="demo-editor">
+                            <h4>HTML Editor</h4>
+                            <textarea id="htmlEditor" rows="10" placeholder="Write your HTML code here...">&lt;h1&gt;Hello World!&lt;/h1&gt;
+&lt;p&gt;This is my first HTML page.&lt;/p&gt;
+&lt;a href="#"&gt;Click me!&lt;/a&gt;</textarea>
+                        </div>
+                        <div class="demo-preview">
+                            <h4>Live Preview</h4>
+                            <iframe id="htmlPreview" class="preview-frame"></iframe>
+                        </div>
+                    </div>
+                    <button id="runHTML" class="btn btn-primary">Update Preview</button>
+                </div>
+
+                <h2>Getting Started Checklist</h2>
+                <div class="content-block">
+                    <div class="checklist">
+                        <div class="checklist-item">
+                            <input type="checkbox" id="step1">
+                            <label for="step1">Create a new HTML file (save it as .html)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="step2">
+                            <label for="step2">Add the basic HTML structure</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="step3">
+                            <label for="step3">Add a title and some content</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="step4">
+                            <label for="step4">Open your file in a web browser</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="step5">
+                            <label for="step5">Experiment with different tags</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next-steps">
+                    <h3>Ready for the next step?</h3>
+                    <a href="css.html" class="btn btn-primary">Learn CSS →</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CodeLearn. Happy coding! 🚀</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

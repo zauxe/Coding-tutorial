@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn JavaScript - CodeLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light">
+    <header>
+        <nav>
+            <div class="nav-brand">
+                <h2>CodeLearn</h2>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="html.html">HTML</a>
+                <a href="css.html">CSS</a>
+                <a href="javascript.html" class="active">JavaScript</a>
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <section class="tutorial-hero">
+                <h1>⚡ JavaScript - The Language of the Web</h1>
+                <p class="tutorial-subtitle">Add interactivity and dynamic behavior to your websites</p>
+            </section>
+
+            <section class="tutorial-content">
+                <h2>What is JavaScript?</h2>
+                <div class="content-block">
+                    <p>JavaScript is a programming language that makes websites interactive. It can respond to user clicks, validate forms, create animations, and much more!</p>
+                    
+                    <div class="callout">
+                        <h4>💡 Think of JavaScript like...</h4>
+                        <p>The electrical system of your house - it powers all the interactive features and makes everything come to life!</p>
+                    </div>
+                </div>
+
+                <h2>Variables and Data Types</h2>
+                <div class="content-block">
+                    <p>Variables store data that your program can use and manipulate.</p>
+                    
+                    <pre><code>// Different ways to declare variables
+let name = "John";           // String (text)
+const age = 25;              // Number
+let isStudent = true;        // Boolean (true/false)
+let hobbies = ["coding", "gaming", "music"]; // Array
+
+// You can change 'let' variables
+name = "Jane";
+
+// But 'const' variables cannot be changed
+// age = 30; // This would cause an error!</code></pre>
+
+                    <div class="explanation">
+                        <ul>
+                            <li><strong>let</strong> - For variables that can change</li>
+                            <li><strong>const</strong> - For variables that stay the same</li>
+                            <li><strong>var</strong> - Older way (avoid using this)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Functions</h2>
+                <div class="content-block">
+                    <p>Functions are reusable blocks of code that perform specific tasks.</p>
+                    
+                    <pre><code>// Function declaration
+function greetUser(name) {
+    return "Hello, " + name + "!";
+}
+
+// Function call
+let message = greetUser("Alice");
+console.log(message); // Output: "Hello, Alice!"
+
+// Arrow function (modern syntax)
+const addNumbers = (a, b) => {
+    return a + b;
+};
+
+let result = addNumbers(5, 3); // result = 8</code></pre>
+                </div>
+
+                <h2>DOM Manipulation</h2>
+                <div class="content-block">
+                    <p>The DOM (Document Object Model) lets JavaScript interact with HTML elements on your page.</p>
+                    
+                    <div class="dom-examples">
+                        <div class="dom-example">
+                            <h4>Select Elements</h4>
+                            <pre><code>// Select by ID
+const button = document.getElementById('myButton');
+
+// Select by class
+const cards = document.querySelectorAll('.card');
+
+// Select by tag
+const paragraphs = document.getElementsByTagName('p');</code></pre>
+                        </div>
+                        
+                        <div class="dom-example">
+                            <h4>Change Content</h4>
+                            <pre><code>// Change text content
+button.textContent = 'Click me!';
+
+// Change HTML content
+div.innerHTML = '&lt;strong&gt;Bold text&lt;/strong&gt;';
+
+// Change attributes
+img.src = 'new-image.jpg';</code></pre>
+                        </div>
+                        
+                        <div class="dom-example">
+                            <h4>Add Event Listeners</h4>
+                            <pre><code>button.addEventListener('click', function() {
+    alert('Button was clicked!');
+});
+
+// Or with arrow function
+button.addEventListener('click', () => {
+    console.log('Modern event handler!');
+});</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Interactive Demo: Mini Console</h2>
+                <div class="content-block">
+                    <div class="js-console">
+                        <div class="console-header">
+                            <h4>JavaScript Console</h4>
+                            <button id="clearConsole" class="btn-small">Clear</button>
+                        </div>
+                        <div class="console-output" id="consoleOutput">
+                            <div class="console-line">Welcome to the JavaScript Console!</div>
+                            <div class="console-line">Try typing: 5 + 3</div>
+                            <div class="console-line">Or: "Hello " + "World"</div>
+                        </div>
+                        <div class="console-input">
+                            <span class="prompt">></span>
+                            <input type="text" id="consoleInput" placeholder="Type JavaScript code here...">
+                            <button id="runConsole" class="btn btn-primary">Run</button>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Common JavaScript Patterns</h2>
+                <div class="content-block">
+                    <div class="pattern-grid">
+                        <div class="pattern-example">
+                            <h4>🔄 Loops</h4>
+                            <pre><code>// For loop
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+// For...of loop
+const fruits = ['apple', 'banana'];
+for (const fruit of fruits) {
+    console.log(fruit);
+}</code></pre>
+                        </div>
+                        
+                        <div class="pattern-example">
+                            <h4>🤔 Conditionals</h4>
+                            <pre><code>const score = 85;
+
+if (score >= 90) {
+    console.log('A grade!');
+} else if (score >= 80) {
+    console.log('B grade!');
+} else {
+    console.log('Keep studying!');
+}</code></pre>
+                        </div>
+                        
+                        <div class="pattern-example">
+                            <h4>📋 Arrays</h4>
+                            <pre><code>const numbers = [1, 2, 3, 4, 5];
+
+// Add to array
+numbers.push(6);
+
+// Remove from array
+numbers.pop();
+
+// Find in array
+const found = numbers.find(n => n > 3);</code></pre>
+                        </div>
+                        
+                        <div class="pattern-example">
+                            <h4>📦 Objects</h4>
+                            <pre><code>const person = {
+    name: 'Alice',
+    age: 30,
+    greet: function() {
+        return `Hi, I'm ${this.name}`;
+    }
+};
+
+console.log(person.name); // 'Alice'
+console.log(person.greet()); // 'Hi, I'm Alice'</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Interactive Button Demo</h2>
+                <div class="content-block">
+                    <div class="button-demo">
+                        <h4>Click Counter</h4>
+                        <p>Click count: <span id="clickCount">0</span></p>
+                        <div class="demo-buttons">
+                            <button id="incrementBtn" class="btn btn-primary">+1</button>
+                            <button id="decrementBtn" class="btn btn-secondary">-1</button>
+                            <button id="resetBtn" class="btn btn-outline">Reset</button>
+                        </div>
+                        <div class="color-changing-box" id="colorBox">
+                            <p>I change colors when you click!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Modern JavaScript Features</h2>
+                <div class="content-block">
+                    <div class="modern-features">
+                        <div class="feature-example">
+                            <h4>Template Literals</h4>
+                            <pre><code>const name = 'World';
+const message = `Hello, ${name}!`;
+// Instead of: "Hello, " + name + "!"</code></pre>
+                        </div>
+                        
+                        <div class="feature-example">
+                            <h4>Destructuring</h4>
+                            <pre><code>const person = {name: 'Alice', age: 25};
+const {name, age} = person;
+// Now you can use name and age directly</code></pre>
+                        </div>
+                        
+                        <div class="feature-example">
+                            <h4>Async/Await</h4>
+                            <pre><code>async function fetchData() {
+    try {
+        const response = await fetch('/api/data');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Getting Started with JavaScript</h2>
+                <div class="content-block">
+                    <div class="checklist">
+                        <div class="checklist-item">
+                            <input type="checkbox" id="js-step1">
+                            <label for="js-step1">Add JavaScript to your HTML with &lt;script&gt; tags</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="js-step2">
+                            <label for="js-step2">Learn variables, functions, and basic syntax</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="js-step3">
+                            <label for="js-step3">Practice DOM manipulation</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="js-step4">
+                            <label for="js-step4">Add event listeners for user interactions</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="js-step5">
+                            <label for="js-step5">Build your first interactive project</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next-steps">
+                    <h3>Congratulations! 🎉</h3>
+                    <p>You now know the basics of HTML, CSS, and JavaScript - the foundation of web development!</p>
+                    <a href="index.html" class="btn btn-primary">Back to Home</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CodeLearn. Happy coding! 🚀</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

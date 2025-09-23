@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn CSS - CodeLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light">
+    <header>
+        <nav>
+            <div class="nav-brand">
+                <h2>CodeLearn</h2>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="html.html">HTML</a>
+                <a href="css.html" class="active">CSS</a>
+                <a href="javascript.html">JavaScript</a>
+                <button id="themeToggle" class="theme-toggle">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <section class="tutorial-hero">
+                <h1>🎨 CSS - Cascading Style Sheets</h1>
+                <p class="tutorial-subtitle">Make your websites beautiful and responsive</p>
+            </section>
+
+            <section class="tutorial-content">
+                <h2>What is CSS?</h2>
+                <div class="content-block">
+                    <p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of HTML documents. It controls colors, fonts, layouts, spacing, and much more!</p>
+                    
+                    <div class="callout">
+                        <h4>💡 Think of CSS like...</h4>
+                        <p>The interior designer of your website - it takes the basic structure (HTML) and makes it look amazing!</p>
+                    </div>
+                </div>
+
+                <h2>CSS Syntax</h2>
+                <div class="content-block">
+                    <p>CSS is made up of rules that target HTML elements and apply styling to them.</p>
+                    
+                    <pre><code>selector {
+    property: value;
+    another-property: another-value;
+}</code></pre>
+
+                    <h3>Example:</h3>
+                    <pre><code>h1 {
+    color: blue;
+    font-size: 32px;
+    text-align: center;
+}</code></pre>
+
+                    <div class="explanation">
+                        <ul>
+                            <li><strong>h1</strong> - The selector (targets all h1 elements)</li>
+                            <li><strong>color: blue;</strong> - A property-value pair</li>
+                            <li><strong>{ }</strong> - Curly braces contain all the styles</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Common CSS Selectors</h2>
+                <div class="content-block">
+                    <div class="selector-grid">
+                        <div class="selector-example">
+                            <h4>Element Selector</h4>
+                            <pre><code>p {
+    font-size: 16px;
+}</code></pre>
+                            <p><small>Targets all &lt;p&gt; elements</small></p>
+                        </div>
+                        
+                        <div class="selector-example">
+                            <h4>Class Selector</h4>
+                            <pre><code>.highlight {
+    background-color: yellow;
+}</code></pre>
+                            <p><small>Targets elements with class="highlight"</small></p>
+                        </div>
+                        
+                        <div class="selector-example">
+                            <h4>ID Selector</h4>
+                            <pre><code>#header {
+    height: 100px;
+}</code></pre>
+                            <p><small>Targets element with id="header"</small></p>
+                        </div>
+                        
+                        <div class="selector-example">
+                            <h4>Descendant Selector</h4>
+                            <pre><code>nav a {
+    text-decoration: none;
+}</code></pre>
+                            <p><small>Targets &lt;a&gt; elements inside &lt;nav&gt;</small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>CSS Properties You Should Know</h2>
+                <div class="content-block">
+                    <div class="properties-grid">
+                        <div class="property-category">
+                            <h4>📝 Text & Fonts</h4>
+                            <ul>
+                                <li><code>color</code> - Text color</li>
+                                <li><code>font-family</code> - Font type</li>
+                                <li><code>font-size</code> - Text size</li>
+                                <li><code>font-weight</code> - Text thickness</li>
+                                <li><code>text-align</code> - Text alignment</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="property-category">
+                            <h4>📦 Box Model</h4>
+                            <ul>
+                                <li><code>margin</code> - Space outside element</li>
+                                <li><code>padding</code> - Space inside element</li>
+                                <li><code>border</code> - Element border</li>
+                                <li><code>width</code> - Element width</li>
+                                <li><code>height</code> - Element height</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="property-category">
+                            <h4>🎨 Colors & Backgrounds</h4>
+                            <ul>
+                                <li><code>background-color</code> - Background color</li>
+                                <li><code>background-image</code> - Background image</li>
+                                <li><code>opacity</code> - Transparency</li>
+                                <li><code>box-shadow</code> - Drop shadow</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="property-category">
+                            <h4>📐 Layout</h4>
+                            <ul>
+                                <li><code>display</code> - How element is displayed</li>
+                                <li><code>position</code> - Element positioning</li>
+                                <li><code>flexbox</code> - Flexible layouts</li>
+                                <li><code>grid</code> - Grid layouts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>The CSS Box Model</h2>
+                <div class="content-block">
+                    <p>Every HTML element is essentially a rectangular box with different layers:</p>
+                    
+                    <div class="box-model-demo">
+                        <div class="box-model-visual">
+                            <div class="margin-layer">
+                                <span class="label">Margin</span>
+                                <div class="border-layer">
+                                    <span class="label">Border</span>
+                                    <div class="padding-layer">
+                                        <span class="label">Padding</span>
+                                        <div class="content-layer">
+                                            <span class="label">Content</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <pre><code>.my-element {
+    margin: 20px;      /* Space outside */
+    border: 2px solid #333; /* Element border */
+    padding: 15px;     /* Space inside */
+    width: 200px;      /* Content width */
+    height: 100px;     /* Content height */
+}</code></pre>
+                </div>
+
+                <h2>Interactive Color Demo</h2>
+                <div class="content-block">
+                    <div class="color-demo">
+                        <div class="color-controls">
+                            <h4>Try Different Colors</h4>
+                            <div class="color-input-group">
+                                <label for="bgColor">Background Color:</label>
+                                <input type="color" id="bgColor" value="#3498db">
+                            </div>
+                            <div class="color-input-group">
+                                <label for="textColor">Text Color:</label>
+                                <input type="color" id="textColor" value="#ffffff">
+                            </div>
+                            <div class="color-input-group">
+                                <label for="borderColor">Border Color:</label>
+                                <input type="color" id="borderColor" value="#2980b9">
+                            </div>
+                        </div>
+                        <div class="color-preview">
+                            <div id="colorBox" class="demo-box">
+                                <p>This text changes color!</p>
+                                <button class="demo-button">Sample Button</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="generated-css">
+                        <h4>Generated CSS:</h4>
+                        <pre id="cssOutput"><code>.demo-box {
+    background-color: #3498db;
+    color: #ffffff;
+    border: 3px solid #2980b9;
+}</code></pre>
+                    </div>
+                </div>
+
+                <h2>Responsive Design Basics</h2>
+                <div class="content-block">
+                    <p>Make your website look great on all devices using media queries:</p>
+                    
+                    <pre><code>/* Mobile First Approach */
+.container {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+        margin: 0 auto;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .container {
+        width: 1000px;
+        padding: 20px;
+    }
+}</code></pre>
+
+                    <div class="responsive-demo">
+                        <p>📱 Mobile: 100% width with small padding</p>
+                        <p>📟 Tablet: 750px width, centered</p>
+                        <p>💻 Desktop: 1000px width with larger padding</p>
+                    </div>
+                </div>
+
+                <h2>Getting Started with CSS</h2>
+                <div class="content-block">
+                    <div class="checklist">
+                        <div class="checklist-item">
+                            <input type="checkbox" id="css-step1">
+                            <label for="css-step1">Link CSS to your HTML file</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="css-step2">
+                            <label for="css-step2">Start with basic styling (colors, fonts)</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="css-step3">
+                            <label for="css-step3">Learn the box model</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="css-step4">
+                            <label for="css-step4">Practice with flexbox for layouts</label>
+                        </div>
+                        <div class="checklist-item">
+                            <input type="checkbox" id="css-step5">
+                            <label for="css-step5">Add responsive design with media queries</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next-steps">
+                    <h3>Ready to add interactivity?</h3>
+                    <a href="javascript.html" class="btn btn-primary">Learn JavaScript →</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CodeLearn. Happy coding! 🚀</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
