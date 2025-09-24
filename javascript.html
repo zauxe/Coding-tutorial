@@ -226,6 +226,192 @@ console.log(person.greet()); // 'Hi, I'm Alice'</code></pre>
                     </div>
                 </div>
 
+                <h2>🔗 Linking JavaScript to HTML</h2>
+                <div class="content-block">
+                    <p>There are several ways to add JavaScript to your HTML pages. Here's how to do it properly:</p>
+                    
+                    <h3>External JavaScript File (Recommended)</h3>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- All your HTML content --&gt;
+    &lt;h1 id="title"&gt;Welcome!&lt;/h1&gt;
+    &lt;button id="myButton"&gt;Click me&lt;/button&gt;
+    
+    &lt;!-- JavaScript file goes at the END of body --&gt;
+    &lt;script src="js/script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    
+                    <h3>Inline JavaScript (for small scripts)</h3>
+                    <pre><code>&lt;script&gt;
+    document.getElementById('myButton').addEventListener('click', function() {
+        alert('Hello World!');
+    });
+&lt;/script&gt;</code></pre>
+                    
+                    <div class="callout">
+                        <h4>💡 Pro Tips</h4>
+                        <ul>
+                            <li><strong>Always put scripts at the END</strong> of the &lt;body&gt; tag so HTML loads first</li>
+                            <li><strong>Use external files</strong> for better organization and reusability</li>
+                            <li><strong>Use relative paths</strong> like <code>js/script.js</code> instead of full paths</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>📝 Common JavaScript Mistakes</h2>
+                <div class="content-block">
+                    <div class="pattern-grid">
+                        <div class="pattern-example">
+                            <h4>❌ Trying to Access Elements Too Early</h4>
+                            <pre><code>&lt;script&gt;
+    // This runs BEFORE the HTML loads!
+    const button = document.getElementById('myButton');
+    // button will be null!
+&lt;/script&gt;
+&lt;body&gt;
+    &lt;button id="myButton"&gt;Click&lt;/button&gt;
+&lt;/body&gt;</code></pre>
+                            <h4>✅ Wait for HTML to Load</h4>
+                            <pre><code>&lt;body&gt;
+    &lt;button id="myButton"&gt;Click&lt;/button&gt;
+    
+    &lt;script&gt;
+        // Now the HTML exists!
+        const button = document.getElementById('myButton');
+    &lt;/script&gt;
+&lt;/body&gt;</code></pre>
+                        </div>
+                        
+                        <div class="pattern-example">
+                            <h4>❌ Missing Semicolons</h4>
+                            <pre><code>let name = "John"
+let age = 25
+console.log(name)</code></pre>
+                            <h4>✅ Always Use Semicolons</h4>
+                            <pre><code>let name = "John";
+let age = 25;
+console.log(name);</code></pre>
+                        </div>
+                        
+                        <div class="pattern-example">
+                            <h4>❌ Comparing with == Instead of ===</h4>
+                            <pre><code>if ("5" == 5) {
+    // This is TRUE (but shouldn't be!)
+}</code></pre>
+                            <h4>✅ Use === for Exact Comparison</h4>
+                            <pre><code>if ("5" === "5") {
+    // Only TRUE if type AND value match
+}</code></pre>
+                        </div>
+                        
+                        <div class="pattern-example">
+                            <h4>❌ Forgetting to Return Values</h4>
+                            <pre><code>function addNumbers(a, b) {
+    a + b; // Missing return!
+}
+
+let result = addNumbers(5, 3);
+// result is undefined</code></pre>
+                            <h4>✅ Always Return When Needed</h4>
+                            <pre><code>function addNumbers(a, b) {
+    return a + b;
+}
+
+let result = addNumbers(5, 3);
+// result is 8</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>🔍 JavaScript Debugging Like a Pro</h2>
+                <div class="content-block">
+                    <h3>Using the Browser Console</h3>
+                    <div class="pattern-grid">
+                        <div class="pattern-example">
+                            <h4>Console Methods</h4>
+                            <pre><code>// Basic logging
+console.log("Hello World");
+
+// Log variables
+let user = {name: "Alice", age: 25};
+console.log("User:", user);
+
+// Different log types
+console.error("This is an error!");
+console.warn("This is a warning!");
+console.info("This is info!");</code></pre>
+                        </div>
+                        
+                        <div class="pattern-example">
+                            <h4>Debugging Tips</h4>
+                            <pre><code>// Check if element exists
+const button = document.getElementById('myButton');
+if (button) {
+    console.log("Button found!");
+} else {
+    console.error("Button not found!");
+}
+
+// Log function calls
+function calculateTotal(price, tax) {
+    console.log(`Calculating: ${price} + ${tax}`);
+    return price + tax;
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <h3>Browser DevTools Shortcuts</h3>
+                    <div class="callout">
+                        <h4>⌨️ Essential Shortcuts</h4>
+                        <ul>
+                            <li><strong>F12</strong> - Open Developer Tools</li>
+                            <li><strong>Ctrl + Shift + I</strong> - Open Developer Tools (alternative)</li>
+                            <li><strong>Ctrl + Shift + J</strong> - Jump directly to Console tab</li>
+                            <li><strong>Ctrl + Shift + C</strong> - Inspect element tool</li>
+                            <li><strong>F5</strong> - Refresh page</li>
+                            <li><strong>Ctrl + F5</strong> - Hard refresh (ignore cache)</li>
+                        </ul>
+                    </div>
+                    
+                    <h3>Reading Error Messages</h3>
+                    <div class="pattern-grid">
+                        <div class="pattern-example">
+                            <h4>Common Error Types</h4>
+                            <pre><code>// ReferenceError
+console.log(unknownVariable);
+// "ReferenceError: unknownVariable is not defined"
+
+// TypeError
+let myVar = null;
+myVar.someMethod();
+// "TypeError: Cannot read property 'someMethod' of null"
+
+// SyntaxError
+if (true {
+    console.log("missing closing parenthesis");
+}
+// "SyntaxError: Unexpected token '{'"</code></pre>
+                        </div>
+                        
+                        <div class="pattern-example">
+                            <h4>How to Fix Errors</h4>
+                            <ol>
+                                <li><strong>Read the error message carefully</strong></li>
+                                <li><strong>Look at the line number</strong> mentioned</li>
+                                <li><strong>Check for typos</strong> in variable names</li>
+                                <li><strong>Make sure elements exist</strong> before using them</li>
+                                <li><strong>Use console.log()</strong> to check values</li>
+                                <li><strong>Check the Console tab</strong> for detailed error info</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
                 <h2>Modern JavaScript Features</h2>
                 <div class="content-block">
                     <div class="modern-features">

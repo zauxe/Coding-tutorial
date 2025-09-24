@@ -129,6 +129,135 @@
                     </div>
                 </div>
 
+                <h2>💡 VS Code HTML Shortcuts</h2>
+                <div class="content-block">
+                    <p>Speed up your HTML coding with these amazing VS Code shortcuts!</p>
+                    
+                    <div class="tag-grid">
+                        <div class="tag-example">
+                            <h4>HTML Boilerplate</h4>
+                            <p>Type <code>!</code> then press <strong>Tab</strong></p>
+                            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                        
+                        <div class="tag-example">
+                            <h4>Div with Class</h4>
+                            <p>Type <code>div.container</code> + <strong>Tab</strong></p>
+                            <pre><code>&lt;div class="container"&gt;&lt;/div&gt;</code></pre>
+                        </div>
+                        
+                        <div class="tag-example">
+                            <h4>Div with ID</h4>
+                            <p>Type <code>div#main</code> + <strong>Tab</strong></p>
+                            <pre><code>&lt;div id="main"&gt;&lt;/div&gt;</code></pre>
+                        </div>
+                        
+                        <div class="tag-example">
+                            <h4>Multiple List Items</h4>
+                            <p>Type <code>ul>li*3</code> + <strong>Tab</strong></p>
+                            <pre><code>&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        </div>
+                        
+                        <div class="tag-example">
+                            <h4>Link with Attributes</h4>
+                            <p>Type <code>a[href="#"]</code> + <strong>Tab</strong></p>
+                            <pre><code>&lt;a href="#"&gt;&lt;/a&gt;</code></pre>
+                        </div>
+                        
+                        <div class="tag-example">
+                            <h4>Image with Attributes</h4>
+                            <p>Type <code>img[src alt]</code> + <strong>Tab</strong></p>
+                            <pre><code>&lt;img src="" alt=""&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>🔗 Linking Files to HTML</h2>
+                <div class="content-block">
+                    <p>Learn how to connect CSS stylesheets and JavaScript files to your HTML pages.</p>
+                    
+                    <h3>Linking CSS Files</h3>
+                    <p>CSS files go in the <code>&lt;head&gt;</code> section:</p>
+                    <pre><code>&lt;head&gt;
+    &lt;!-- Link your CSS file --&gt;
+    &lt;link rel="stylesheet" href="css/style.css"&gt;
+    
+    &lt;!-- Link Google Fonts --&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"&gt;
+&lt;/head&gt;</code></pre>
+                    
+                    <h3>Linking JavaScript Files</h3>
+                    <p>JavaScript files go at the end of <code>&lt;body&gt;</code>:</p>
+                    <pre><code>&lt;body&gt;
+    &lt;!-- All your HTML content --&gt;
+    
+    &lt;!-- JavaScript file goes here --&gt;
+    &lt;script src="js/script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+                    
+                    <div class="callout">
+                        <h4>💡 Pro Tip</h4>
+                        <p>Always use <strong>relative paths</strong> like <code>css/style.css</code> instead of absolute paths like <code>C:/Users/YourName/...</code> so your website works on any computer!</p>
+                    </div>
+                </div>
+
+                <h2>❌ Common HTML Mistakes to Avoid</h2>
+                <div class="content-block">
+                    <div class="tag-grid">
+                        <div class="tag-example">
+                            <h4>❌ Missing Closing Tags</h4>
+                            <pre><code>&lt;div&gt;
+    &lt;p&gt;Some text
+    &lt;span&gt;More text
+&lt;/div&gt;</code></pre>
+                            <h4>✅ Properly Closed Tags</h4>
+                            <pre><code>&lt;div&gt;
+    &lt;p&gt;Some text&lt;/p&gt;
+    &lt;span&gt;More text&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        
+                        <div class="tag-example">
+                            <h4>❌ Unquoted Attributes</h4>
+                            <pre><code>&lt;div class=container id=main&gt;</code></pre>
+                            <h4>✅ Quoted Attributes</h4>
+                            <pre><code>&lt;div class="container" id="main"&gt;</code></pre>
+                        </div>
+                        
+                        <div class="tag-example">
+                            <h4>❌ Wrong Self-Closing Tags</h4>
+                            <pre><code>&lt;img&gt;Some text&lt;/img&gt;
+&lt;br&gt;Line break&lt;/br&gt;</code></pre>
+                            <h4>✅ Correct Self-Closing Tags</h4>
+                            <pre><code>&lt;img src="image.jpg" alt="Description"&gt;
+&lt;br&gt;</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="callout">
+                        <h4>🔍 Quick Debug Tips</h4>
+                        <ul>
+                            <li>Press <strong>F12</strong> to open browser Developer Tools</li>
+                            <li>Click the <strong>Elements</strong> tab to see your HTML structure</li>
+                            <li>Red error indicators show problems with your HTML</li>
+                            <li>Right-click any element and select <strong>"Inspect"</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
                 <h2>Try It Yourself!</h2>
                 <div class="content-block">
                     <div class="interactive-demo">

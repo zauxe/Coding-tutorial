@@ -180,6 +180,255 @@
 }</code></pre>
                 </div>
 
+                <h2>🎯 How to Target HTML Elements in CSS</h2>
+                <div class="content-block">
+                    <p>Understanding CSS selectors is crucial! Here's how to target different HTML elements:</p>
+                    
+                    <div class="selector-grid">
+                        <div class="selector-example">
+                            <h4>Target Classes with . (dot)</h4>
+                            <p><strong>HTML:</strong></p>
+                            <pre><code>&lt;div class="container"&gt;Content&lt;/div&gt;</code></pre>
+                            <p><strong>CSS:</strong></p>
+                            <pre><code>.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}</code></pre>
+                        </div>
+                        
+                        <div class="selector-example">
+                            <h4>Target IDs with # (hash)</h4>
+                            <p><strong>HTML:</strong></p>
+                            <pre><code>&lt;div id="header"&gt;Navigation&lt;/div&gt;</code></pre>
+                            <p><strong>CSS:</strong></p>
+                            <pre><code>#header {
+    background-color: #333;
+    height: 80px;
+}</code></pre>
+                        </div>
+                        
+                        <div class="selector-example">
+                            <h4>Target Elements Directly</h4>
+                            <p><strong>HTML:</strong></p>
+                            <pre><code>&lt;h1&gt;Page Title&lt;/h1&gt;
+&lt;p&gt;Paragraph text&lt;/p&gt;</code></pre>
+                            <p><strong>CSS:</strong></p>
+                            <pre><code>h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+}</code></pre>
+                        </div>
+                        
+                        <div class="selector-example">
+                            <h4>Combine Selectors</h4>
+                            <p><strong>HTML:</strong></p>
+                            <pre><code>&lt;nav class="nav-links"&gt;
+    &lt;a href="#"&gt;Home&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+                            <p><strong>CSS:</strong></p>
+                            <pre><code>.nav-links a {
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links a:hover {
+    background-color: #f0f0f0;
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="callout">
+                        <h4>💡 Quick Reference</h4>
+                        <ul>
+                            <li><strong>Classes</strong> (can be used multiple times): <code>.classname</code></li>
+                            <li><strong>IDs</strong> (should be unique): <code>#idname</code></li>
+                            <li><strong>Elements</strong> (target all of that type): <code>h1, p, div</code></li>
+                            <li><strong>Nested</strong> (element inside another): <code>.container p</code></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>⚡ CSS Shortcuts in VS Code</h2>
+                <div class="content-block">
+                    <p>Speed up your CSS coding with these time-saving shortcuts!</p>
+                    
+                    <div class="selector-grid">
+                        <div class="selector-example">
+                            <h4>Spacing Shortcuts</h4>
+                            <ul>
+                                <li><code>m10</code> + Tab → <code>margin: 10px;</code></li>
+                                <li><code>p20</code> + Tab → <code>padding: 20px;</code></li>
+                                <li><code>mt10</code> + Tab → <code>margin-top: 10px;</code></li>
+                                <li><code>pl15</code> + Tab → <code>padding-left: 15px;</code></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="selector-example">
+                            <h4>Size & Display Shortcuts</h4>
+                            <ul>
+                                <li><code>w100</code> + Tab → <code>width: 100px;</code></li>
+                                <li><code>h50</code> + Tab → <code>height: 50px;</code></li>
+                                <li><code>df</code> + Tab → <code>display: flex;</code></li>
+                                <li><code>dg</code> + Tab → <code>display: grid;</code></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="selector-example">
+                            <h4>Color & Text Shortcuts</h4>
+                            <ul>
+                                <li><code>bgc</code> + Tab → <code>background-color: ;</code></li>
+                                <li><code>c</code> + Tab → <code>color: ;</code></li>
+                                <li><code>fz16</code> + Tab → <code>font-size: 16px;</code></li>
+                                <li><code>tac</code> + Tab → <code>text-align: center;</code></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="selector-example">
+                            <h4>Position & Border</h4>
+                            <ul>
+                                <li><code>pos</code> + Tab → <code>position: ;</code></li>
+                                <li><code>bd1</code> + Tab → <code>border: 1px solid;</code></li>
+                                <li><code>br5</code> + Tab → <code>border-radius: 5px;</code></li>
+                                <li><code>op50</code> + Tab → <code>opacity: 0.5;</code></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>🎨 CSS Custom Properties (Variables)</h2>
+                <div class="content-block">
+                    <p>Use CSS variables to make your stylesheets more maintainable and consistent!</p>
+                    
+                    <h3>Defining Variables</h3>
+                    <pre><code>/* Define variables in :root (available everywhere) */
+:root {
+    --main-color: #3498db;
+    --text-color: #333;
+    --spacing: 1rem;
+    --border-radius: 8px;
+}</code></pre>
+                    
+                    <h3>Using Variables</h3>
+                    <pre><code>/* Use variables with var() */
+.button {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+}
+
+.card {
+    border: 1px solid var(--main-color);
+    padding: calc(var(--spacing) * 2);
+}</code></pre>
+                    
+                    <h3>Theme Switching (like this website!)</h3>
+                    <pre><code>/* Light theme (default) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+}
+
+/* Dark theme override */
+.dark {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}</code></pre>
+                    
+                    <div class="callout">
+                        <h4>🌟 Benefits of CSS Variables</h4>
+                        <ul>
+                            <li><strong>Consistency:</strong> Change a color once, update everywhere</li>
+                            <li><strong>Theme switching:</strong> Easy light/dark mode implementation</li>
+                            <li><strong>Maintainability:</strong> No need to find/replace values across files</li>
+                            <li><strong>Calculations:</strong> Use with calc() for dynamic values</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>❌ Common CSS Mistakes to Avoid</h2>
+                <div class="content-block">
+                    <div class="selector-grid">
+                        <div class="selector-example">
+                            <h4>❌ Missing Semicolons</h4>
+                            <pre><code>.container {
+    width: 100px
+    height: 50px
+    margin: 10px
+}</code></pre>
+                            <h4>✅ All Semicolons Present</h4>
+                            <pre><code>.container {
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+}</code></pre>
+                        </div>
+                        
+                        <div class="selector-example">
+                            <h4>❌ Forgetting the Dot for Classes</h4>
+                            <pre><code>container {
+    width: 100%;
+}</code></pre>
+                            <h4>✅ Proper Class Targeting</h4>
+                            <pre><code>.container {
+    width: 100%;
+}
+
+#header {
+    background: blue;
+}</code></pre>
+                        </div>
+                        
+                        <div class="selector-example">
+                            <h4>❌ Missing Units</h4>
+                            <pre><code>.box {
+    width: 100;
+    margin: 10;
+    font-size: 16;
+}</code></pre>
+                            <h4>✅ Include Units</h4>
+                            <pre><code>.box {
+    width: 100px;
+    margin: 10px;
+    font-size: 16px;
+}</code></pre>
+                        </div>
+                        
+                        <div class="selector-example">
+                            <h4>❌ Overusing !important</h4>
+                            <pre><code>.text {
+    color: red !important;
+    font-size: 20px !important;
+}</code></pre>
+                            <h4>✅ Use Specificity Instead</h4>
+                            <pre><code>.container .text {
+    color: red;
+    font-size: 20px;
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="callout">
+                        <h4>🔍 CSS Debugging Tips</h4>
+                        <ul>
+                            <li>Press <strong>F12</strong> → <strong>Elements</strong> → <strong>Styles</strong> to see applied CSS</li>
+                            <li>Crossed-out rules mean they're overridden by more specific rules</li>
+                            <li>Use <strong>Ctrl+F5</strong> to hard refresh and clear CSS cache</li>
+                            <li>Check for typos in property names and values</li>
+                            <li>Validate your CSS using online CSS validators</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <h2>Interactive Color Demo</h2>
                 <div class="content-block">
                     <div class="color-demo">
