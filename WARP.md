@@ -90,6 +90,171 @@ The application uses a class-based component system:
 - Animation pause/resume based on page visibility
 - Lazy loading of non-critical animations
 
+## HTML/CSS Basics for Development
+
+### Linking Files in HTML
+```html path=null start=null
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Link CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Link Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Your HTML content here -->
+    
+    <!-- Link JavaScript file (at end of body) -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+```
+
+### HTML Shortcuts in VS Code
+- **`! + Tab`**: Creates basic HTML5 boilerplate
+- **`div.container + Tab`**: Creates `<div class="container"></div>`
+- **`div#main + Tab`**: Creates `<div id="main"></div>`
+- **`ul>li*3 + Tab`**: Creates unordered list with 3 list items
+- **`a[href="#"] + Tab`**: Creates link with href attribute
+- **`img[src alt] + Tab`**: Creates image tag with src and alt attributes
+
+### CSS Class and ID Targeting
+```css path=null start=null
+/* Target HTML classes with a dot (.) */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Target HTML IDs with a hash (#) */
+#themeToggle {
+    border: none;
+    background: transparent;
+}
+
+#htmlEditor {
+    width: 100%;
+    height: 200px;
+}
+
+/* Target HTML elements directly */
+body {
+    font-family: Inter, sans-serif;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+/* Combine selectors */
+.nav-links a {
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.nav-links a:hover {
+    background-color: #f0f0f0;
+}
+```
+
+### CSS Shortcuts in VS Code
+- **`m10 + Tab`**: `margin: 10px;`
+- **`p20 + Tab`**: `padding: 20px;`
+- **`w100 + Tab`**: `width: 100px;`
+- **`h50 + Tab`**: `height: 50px;`
+- **`bgc + Tab`**: `background-color: ;`
+- **`c + Tab`**: `color: ;`
+- **`df + Tab`**: `display: flex;`
+- **`dg + Tab`**: `display: grid;`
+- **`tac + Tab`**: `text-align: center;`
+- **`fz16 + Tab`**: `font-size: 16px;`
+
+### File Organization Best Practices
+```
+📁 Project Structure:
+├── index.html          (Always your main page)
+├── 📁 css/
+│   └── style.css       (Main stylesheet)
+├── 📁 js/
+│   └── script.js       (Main JavaScript file)
+├── 📁 img/
+│   └── (your images)   (.jpg, .png, .svg files)
+└── 📁 pages/           (Additional HTML pages)
+    ├── about.html
+    └── contact.html
+```
+
+### Common HTML Structure Patterns
+```html path=null start=null
+<!-- Navigation Bar -->
+<header>
+    <nav>
+        <div class="nav-brand">
+            <h2>Site Name</h2>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<main>
+    <section class="hero">
+        <h1>Page Title</h1>
+        <p>Description text</p>
+    </section>
+    
+    <section class="content">
+        <div class="container">
+            <!-- Your content here -->
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Your Site</p>
+    </div>
+</footer>
+```
+
+### CSS Custom Properties (Variables) Basics
+```css path=css/style.css start=2
+/* Define variables in :root */
+:root {
+    --main-color: #3498db;
+    --text-color: #333;
+    --spacing: 1rem;
+}
+
+/* Use variables with var() */
+.button {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    padding: var(--spacing);
+}
+
+/* Override variables for dark theme */
+.dark {
+    --text-color: #fff;
+    --main-color: #5dade2;
+}
+```
+
 ## Development Notes
 
 ### Adding New Interactive Components
@@ -136,6 +301,118 @@ safeEval(code) {
 3. Verify theme switching works correctly
 4. Check responsive design on different screen sizes
 5. Test browser compatibility (Chrome 60+, Firefox 55+, Safari 12+, Edge 79+)
+
+## Beginner Tips & Common Mistakes
+
+### HTML Common Mistakes to Avoid
+```html path=null start=null
+<!-- ❌ Wrong: Missing closing tags -->
+<div>
+    <p>Some text
+    <span>More text
+</div>
+
+<!-- ✅ Correct: Properly closed tags -->
+<div>
+    <p>Some text</p>
+    <span>More text</span>
+</div>
+
+<!-- ❌ Wrong: Self-closing tags with content -->
+<img>Some text</img>
+<br>Line break</br>
+
+<!-- ✅ Correct: Self-closing tags -->
+<img src="image.jpg" alt="Description">
+<br>
+
+<!-- ❌ Wrong: Missing quotes on attributes -->
+<div class=container id=main>
+
+<!-- ✅ Correct: Quoted attributes -->
+<div class="container" id="main">
+```
+
+### CSS Common Mistakes to Avoid
+```css path=null start=null
+/* ❌ Wrong: Missing semicolons */
+.container {
+    width: 100px
+    height: 50px
+    margin: 10px
+}
+
+/* ✅ Correct: All semicolons present */
+.container {
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+}
+
+/* ❌ Wrong: Forgetting the dot for classes */
+container {
+    width: 100%;
+}
+
+/* ✅ Correct: Dot for classes, hash for IDs */
+.container {
+    width: 100%;
+}
+
+#header {
+    background: blue;
+}
+
+/* ❌ Wrong: Missing units */
+.box {
+    width: 100;
+    margin: 10;
+}
+
+/* ✅ Correct: Include units (px, %, rem, em) */
+.box {
+    width: 100px;
+    margin: 10px;
+}
+```
+
+### File Path Common Issues
+```html path=null start=null
+<!-- ❌ Wrong: Absolute paths that won't work on other computers -->
+<link rel="stylesheet" href="C:/Users/YourName/Desktop/project/css/style.css">
+
+<!-- ✅ Correct: Relative paths -->
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../css/style.css"> <!-- Go up one folder -->
+
+<!-- ❌ Wrong: Missing file extensions -->
+<script src="js/script"></script>
+<img src="images/logo" alt="Logo">
+
+<!-- ✅ Correct: Include file extensions -->
+<script src="js/script.js"></script>
+<img src="images/logo.png" alt="Logo">
+```
+
+### Quick Debugging Tips
+1. **HTML Issues**: Use browser Developer Tools (F12) → Elements tab
+2. **CSS Issues**: Use Developer Tools → Styles panel to see which CSS rules apply
+3. **JavaScript Issues**: Check Console tab (F12) for error messages
+4. **File Loading Issues**: Check Network tab (F12) to see if files are loading
+
+### VS Code Extensions for Web Development
+- **Live Server**: Auto-refresh browser when you save files
+- **Auto Rename Tag**: Automatically renames paired HTML tags
+- **Prettier**: Formats your code automatically
+- **Emmet**: Built-in shortcuts for HTML/CSS (already included)
+- **Color Highlight**: Shows actual colors in your CSS
+
+### Browser Developer Tools Shortcuts
+- **F12**: Open/close developer tools
+- **Ctrl + Shift + C**: Inspect element
+- **Ctrl + Shift + I**: Open developer tools
+- **Ctrl + Shift + M**: Toggle device simulation (mobile view)
+- **Ctrl + F5**: Hard refresh (ignores cache)
 
 ## Troubleshooting
 
